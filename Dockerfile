@@ -21,10 +21,6 @@ RUN apt-get update && \
     $(grep -vE "^\s*(#|$)" /tmp/src/debian.txt | tr "\n" " ") && \
     rm -rf /tmp/src/debian.txt /var/lib/apt/lists/*
 
-# Install Floss binary
-COPY ./install-floss.sh .
-RUN ./install-floss.sh
-
 # copy all files not in .dockerignore
 COPY ./ /tmp/src
 RUN pip install build setuptools_scm
@@ -53,10 +49,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     $(grep -vE "^\s*(#|$)" /tmp/src/debian.txt | tr "\n" " ") && \
     rm -rf /tmp/src/debian.txt /var/lib/apt/lists/*
-
-# Install Floss binary
-COPY ./install-floss.sh .
-RUN ./install-floss.sh
 
 ARG UID=21000
 ARG GID=21000

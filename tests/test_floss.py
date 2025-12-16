@@ -2,12 +2,12 @@ import os
 import subprocess
 from unittest import mock
 
-from azul_runner import FV, Event, JobResult, State, test_template
+from azul_runner import FV, Event, JobResult, State, TestPlugin
 
-from azul_plugin_floss.main import AzulPluginFloss
+from azul_plugin_floss.main import AzulPluginFloss, _run_floss
 
 
-class TestExecute(test_template.TestPlugin):
+class TestExecute(TestPlugin):
     PLUGIN_TO_TEST = AzulPluginFloss
 
     @staticmethod
@@ -392,7 +392,7 @@ class TestExecute(test_template.TestPlugin):
         mock_process.configure_mock(**attrs)
         subprocess_mock.return_value = mock_process
         try:
-            AzulPluginFloss._run_floss("/a/randomFilePath", 1)
+            _run_floss("/a/randomFilePath", 1)
         except subprocess.TimeoutExpired:
             pass
         mock_kill_proc_tree.assert_called()

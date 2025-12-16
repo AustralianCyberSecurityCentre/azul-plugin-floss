@@ -2,3 +2,4 @@ azul-runner>=4.0.0
 PyYAML
 python-magic
 psutil
+flare-floss
