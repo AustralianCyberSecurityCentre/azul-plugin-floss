@@ -11,9 +11,6 @@ To install azul-plugin-floss for development run the command
 pip install -e .
 ```
 
-You will also need to install the floss binary using the command `./install-floss.sh`
-This is a bash script installing a binary so you should check the script first.
-
 ## Usage: azul-plugin-floss
 
 This plug runs floss on a given PE file.
