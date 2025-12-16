@@ -50,10 +50,6 @@ RUN apt-get update && \
     $(grep -vE "^\s*(#|$)" /tmp/src/debian.txt | tr "\n" " ") && \
     rm -rf /tmp/src/debian.txt /var/lib/apt/lists/*
 
-# Install Floss binary
-COPY ./install-floss.sh .
-RUN ./install-floss.sh
-
 ARG UID=21000
 ARG GID=21000
 RUN groupadd -g $GID azul && useradd --create-home --shell /bin/bash -u $UID -g $GID azul
