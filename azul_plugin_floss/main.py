@@ -9,12 +9,23 @@ from dataclasses import dataclass
 
 import psutil
 import pydantic
-from azul_runner import FV, BinaryPlugin, Feature, FeatureType, Job, State, add_settings, cmdline_run
+from azul_runner import (
+    FV,
+    BinaryPlugin,
+    Feature,
+    FeatureType,
+    Job,
+    State,
+    add_settings,
+    cmdline_run,
+)
+
 
 class FlossEmptyOutputException(Exception):
     """Custom exception for case where floss binary returns an empty string as output."""
 
     pass
+
 
 @dataclass
 class _FlossString:
@@ -23,6 +34,7 @@ class _FlossString:
     string: str
     function: int
     offset: int
+
 
 def kill_proc_tree(pid, sig=signal.SIGKILL):
     """Kill a process tree (including grandchildren) with signal KILL."""
@@ -34,6 +46,7 @@ def kill_proc_tree(pid, sig=signal.SIGKILL):
         except psutil.NoSuchProcess:
             pass
 
+
 def _add_floss_feature(
     flossStrings: list[_FlossString], flossFunctions: dict[int, int], string: str, function: int, offset: int
 ):
@@ -43,6 +56,7 @@ def _add_floss_feature(
         flossFunctions[function] += 1
     else:
         flossFunctions[function] = 1
+
 
 def _parse_floss_json(stdout: str) -> tuple[list[_FlossString], dict[int, int]]:
     """Parse floss json output into azul features."""
@@ -79,6 +93,7 @@ def _parse_floss_json(stdout: str) -> tuple[list[_FlossString], dict[int, int]]:
         )
 
     return flossStrings, flossFunctions
+
 
 def _run_floss(fileDir: str, timeoutSeconds: int | None = None) -> str | State:
     """Run floss executable with flags set to output as json."""
@@ -129,6 +144,7 @@ def _run_floss(fileDir: str, timeoutSeconds: int | None = None) -> str | State:
             raise FlossEmptyOutputException(error_text)
         return stdout
 
+
 def _floss_data_to_features(strings: list[_FlossString], functions: dict[int, int]) -> dict[str, list[FV]]:
     """Convert floss data structures into feature values."""
     features: dict[str, list[FV]] = {"floss_strings": [], "floss_functions": []}
@@ -142,6 +158,7 @@ def _floss_data_to_features(strings: list[_FlossString], functions: dict[int, in
             FV(value=f"0x{flossFunction:x}", label=f"{functions[flossFunction]} string{plural} found")
         )
     return features
+
 
 class AzulPluginFloss(BinaryPlugin):
     """Extract obfuscated strings from Windows PE files using FLARE Obfuscated String Solver."""
