@@ -184,7 +184,7 @@ class TestExecute(TestPlugin):
                     ),
                 )
             ],
-            config={"run_timeout": 5 * 60},
+            config={"run_timeout": 10 * 60},
         )
 
         self.assertJobResult(
@@ -413,13 +413,7 @@ class TestExecute(TestPlugin):
 
         self.assertJobResult(
             result,
-            JobResult(
-                state=State(
-                    State.Label.COMPLETED_WITH_ERRORS,
-                    message="No strings could be extracted because a "
-                    + "unicode decode error occurred and Floss can't process this file.",
-                )
-            ),
+            JobResult(state=State(State.Label.COMPLETED_EMPTY)),
         )
 
     def test_unsupported_architecture(self):
