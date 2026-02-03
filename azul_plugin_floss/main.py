@@ -109,7 +109,7 @@ def _run_floss(fileDir: str, timeoutSeconds: int | None = None) -> str | State:
         # We use Popen in order to properly kill any child processes spawned
         # by floss immediately. subprocess.run does not allow us to get a pid
         # which we need in order to kill the child processes.
-        flossProc = subprocess.Popen(  # noqa: S603 # nosec B603
+        flossProc = subprocess.Popen(  # noqa: S603 # noqa: S603
             cmdLineString,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
