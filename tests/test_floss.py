@@ -33,8 +33,7 @@ class TestExecute(TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="8bd74619b9c8fe6d5a586e54d10f45499fff70a4b4dfc47eef4c516646274676",
+                        sha256="8bd74619b9c8fe6d5a586e54d10f45499fff70a4b4dfc47eef4c516646274676",
                         features={
                             "floss_strings": [
                                 FV("hello world", label="function 0x4015d0", offset=5422),
@@ -84,8 +83,7 @@ class TestExecute(TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="a1d6da411725de3d6be023311a7d0f26d35188e3548b1d0773916cf476b4aed8",
+                        sha256="a1d6da411725de3d6be023311a7d0f26d35188e3548b1d0773916cf476b4aed8",
                         features={
                             "floss_strings": [
                                 FV("hello world", label="function 0x401500", offset=5712),
@@ -121,8 +119,7 @@ class TestExecute(TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="05563546888e49120be95040f618c8150a508cbf0ec9c719d6790d6fa078fb1b",
+                        sha256="05563546888e49120be95040f618c8150a508cbf0ec9c719d6790d6fa078fb1b",
                         features={
                             "floss_strings": [
                                 FV("hello world", label="function 0x401500", offset=5712),
@@ -157,8 +154,7 @@ class TestExecute(TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="4afe728cc82089ade9d3dda4b0fa0dd8a1abe9b58fea6aa99fdd60330d8020b6",
+                        sha256="4afe728cc82089ade9d3dda4b0fa0dd8a1abe9b58fea6aa99fdd60330d8020b6",
                         features={
                             "floss_strings": [
                                 FV("goodbye world", label="function 0x401530", offset=4993),
@@ -193,8 +189,7 @@ class TestExecute(TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="e90bdaaf5f9ca900133b699f18e4062562148169b29cb4eb37a0577388c22527",
+                        sha256="e90bdaaf5f9ca900133b699f18e4062562148169b29cb4eb37a0577388c22527",
                         features={
                             "floss_strings": [
                                 FV("0001", label="function 0x486d70", offset=552435),
@@ -347,8 +342,7 @@ class TestExecute(TestPlugin):
                 state=State(State.Label.COMPLETED),
                 events=[
                     Event(
-                        entity_type="binary",
-                        entity_id="8d712c628ce31898f150a8e066ab3ca86a2bb075f1ec8cea8492eccb11f9e0b5",
+                        sha256="8d712c628ce31898f150a8e066ab3ca86a2bb075f1ec8cea8492eccb11f9e0b5",
                         features={
                             "floss_strings": [
                                 FV("0T0p", label="function 0x411019", offset=27790),

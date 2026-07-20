@@ -197,6 +197,8 @@ class AzulPluginFloss(BinaryPlugin):
 
     def execute(self, job: Job) -> State:
         """Run FLOSS across data from any Windows PE file."""
+        if job.event.entity.size is None:
+            raise ValueError("Expected job.event.entity.size to be an int, got None")
         if job.event.entity.size > self.cfg.filter_max_content_size:
             self.logger.warning(
                 "File size was too large for floss to process max filesize is "
@@ -208,7 +210,7 @@ class AzulPluginFloss(BinaryPlugin):
 
         stdout = _run_floss(
             path,
-            self.cfg.run_timeout - self.cfg.run_timeout_difference,
+            self.cfg.run_timeout - self.cfg.run_timeout_difference,  # ty: ignore[unresolved-attribute] ty doesn't understand add_settings
         )
         if isinstance(stdout, State):
             return stdout
