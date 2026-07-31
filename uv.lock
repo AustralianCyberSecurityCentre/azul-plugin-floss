@@ -53,7 +53,7 @@ wheels = [
 
 [[package]]
 name = "azul-bedrock"
-version = "12.0.53"
+version = "12.0.56"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "babel" },
@@ -71,7 +71,7 @@ dependencies = [
     { name = "yara-x" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/cba/6e764d954cb44/azul_bedrock-12.0.53-py3-none-any.whl", hash = "sha256:cba6e764d954cb44b43403e750b98b08e4554bd8a42df2739644993e3ad700f0" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/684/45f908a6e8fb8/azul_bedrock-12.0.56-py3-none-any.whl", hash = "sha256:68445f908a6e8fb8f502639060f42ea5e59bd50d3915025f124b02e2d040e353" },
 ]
 
 [package.optional-dependencies]
@@ -128,7 +128,7 @@ dev = [
 
 [[package]]
 name = "azul-runner"
-version = "12.0.79"
+version = "12.0.81"
 source = { registry = "https://devpi.acsc.internal/azul/stable/" }
 dependencies = [
     { name = "azul-bedrock" },
@@ -141,7 +141,7 @@ dependencies = [
     { name = "watchdog" },
 ]
 wheels = [
-    { url = "https://devpi.acsc.internal/azul/stable/+f/fbc/864478b42e7cb/azul_runner-12.0.79-py3-none-any.whl", hash = "sha256:fbc864478b42e7cbd320928ae057697cb57d1fab2d984db3315df7cf8544bea1" },
+    { url = "https://devpi.acsc.internal/azul/stable/+f/4ed/1dd72cc15fde7/azul_runner-12.0.81-py3-none-any.whl", hash = "sha256:4ed1dd72cc15fde7aa58c15303233d9e13aa51a444647e0b2b7159b47c4ec0e7" },
 ]
 
 [package.optional-dependencies]
@@ -1951,14 +1951,14 @@ wheels = [
 
 [[package]]
 name = "tqdm"
-version = "4.69.0"
+version = "4.69.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8c/69/40407dfc835517f058b603dbf37a6df094d8582b015a51eddc988febbcb7/tqdm-4.69.0.tar.gz", hash = "sha256:700c5e85dcd5f009dd6222588a29180a193a748247a5d855b4d67db93d79a53b", size = 792569, upload-time = "2026-07-17T18:09:06.2Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/dd/84/da0e5038228fa34dfd77c5026b173ed035d2a3ba31f1077590c013de2bff/tqdm-4.69.1.tar.gz", hash = "sha256:2be21080a0ce17e902c2f1baeb6a74bf551b67bbdfa4bc0109fad471d0b4cb0d", size = 793046, upload-time = "2026-07-24T14:22:02.08Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fe/21/99a0cdaf54eb35e77623c41b5a2c9472ee4404bba687052791fe2aba6773/tqdm-4.69.0-py3-none-any.whl", hash = "sha256:9979978912be667a6ef21fd5d8abf54e324e63d82f7f43c360792ebc2bc4e622", size = 676680, upload-time = "2026-07-17T18:09:04.172Z" },
+    { url = "https://files.pythonhosted.org/packages/01/50/5817619a0fca56aff06383dbfde7ae017b3ca383915b3f1e4713164273cf/tqdm-4.69.1-py3-none-any.whl", hash = "sha256:0a654b96f7a2660cceb615b56f307ec2bef96c515409014a429a561981ab52b4", size = 675452, upload-time = "2026-07-24T14:22:00.048Z" },
 ]
 
 [[package]]
