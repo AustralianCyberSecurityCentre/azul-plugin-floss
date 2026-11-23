@@ -210,7 +210,7 @@ class AzulPluginFloss(BinaryPlugin):
 
         stdout = _run_floss(
             path,
-            self.cfg.run_timeout - self.cfg.run_timeout_difference,  # ty: ignore[unresolved-attribute] ty doesn't understand add_settings
+            self.cfg.run_timeout - self.cfg.run_timeout_difference,  # ty: ignore[missing-attribute] ty doesn't understand add_settings
         )
         if isinstance(stdout, State):
             return stdout
